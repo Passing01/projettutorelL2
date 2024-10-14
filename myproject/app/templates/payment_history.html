@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2>Historique des paiements</h2>
+<!-- Ajoutez ici l'historique des paiements -->
+ <table class="table"></table>
+    <thead>
+        <tr>
+            <th>Date de paiement</th>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Reçu</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for payment in payments %}
+        <tr>
+            <td>{{ payment.payment_date }}</td>
+            <td>{{ payment.product.name }}</td>
+            <td>{{ payment.product.price }} €</td>
+            <td><a href="{% url 'payment_receipt' payment.id %}" class="btn btn-primary">Télécharger le reçu</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

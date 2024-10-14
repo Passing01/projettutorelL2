@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Messages de Contact</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Sujet</th>
+            <th>Message</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for message in messages %}
+        <tr>
+            <td>{{ message.email }}</td>
+            <td>{{ message.subject }}</td>
+            <td>{{ message.message }}</td>
+            <td>{{ message.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

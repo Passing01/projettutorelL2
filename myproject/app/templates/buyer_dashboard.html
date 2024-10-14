@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2>Tableau de bord de l'acheteur</h2>
+<!--<a href="{% url 'view_cart' %}" class="btn btn-primary">Voir le panier</a>-->
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="card-text">Prix: {{ product.price }} €</p>
+                <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">Voir les détails</a>
+                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-secondary">Ajouter au panier</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

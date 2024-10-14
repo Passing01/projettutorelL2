@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2>Tableau de bord du vendeur</h2>
+<!-- Ajoutez ici le tableau de bord du vendeur -->
+ <div class="row"></div>
+    <div class="col-md-6">
+        <h3>Mes produits</h3>
+        <ul class="list-group">
+            {% for product in products %}
+            <li class="list-group-item">{{ product.name }} - {{ product.price }} €</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <h3>Statistiques de vente</h3>
+        <p>Total des ventes: {{ total_sales }} €</p>
+        <p>Produits les plus vendus: {{ top_selling_products }}</p>
+    </div>
+</div>
+{% endblock %}

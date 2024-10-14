@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2>Historique des ventes</h2>
+<!-- Ajoutez ici l'historique des ventes -->
+ <table class="table"></table>
+    <thead>
+        <tr>
+            <th>Date de vente</th>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Reçu</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale.sale_date }}</td>
+            <td>{{ sale.product.name }}</td>
+            <td>{{ sale.product.price }} €</td>
+            <td><a href="{% url 'sale_receipt' sale.id %}" class="btn btn-primary">Télécharger le reçu</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

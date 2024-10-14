@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Votre panier</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Quantité</th>
+            <th>Prix unitaire</th>
+            <th>Prix total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in products %}
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.product.price|floatformat:2 }} €</td>
+            <td>{{ item.product.price|floatformat:2 }} €</td> <!-- Prix unitaire -->
+            <td>{{ item.product.price|floatformat:2 }} €</td> <!-- Prix total -->
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p>Total: {{ total|floatformat:2 }} €</p>
+<form action="{% url 'payment' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Payer via Stripe</button>
+</form>
+{% endblock %}
