@@ -98,6 +98,7 @@ Mentionne les auteurs du projet. Par exemple :
 
     **OUEDRAOGO Passing Abdoul Rahim**
     **Collaborateur**
+    **NEYA Moussa**
 
 #License
 
