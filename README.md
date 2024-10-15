@@ -68,8 +68,8 @@ Applique les migrations :
 Comment utiliser l'application:
 
     Accède à l'application via http://127.0.0.1:8000/.
-    Inscris-toi en tant qu'étudiant ou tuteur.
-    Explore les fonctionnalités disponibles, comme la recherche de tuteurs ou la planification de sessions.
+    Inscris-toi en tant que vendeur ou acheteur.
+    Explore les fonctionnalités disponibles, comme l’achat et la vente.
 
 #9. Fonctionnalités
 
